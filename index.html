@@ -6,6 +6,30 @@
     <title>Pokedex</title>
   </head>
   <body>
+
+    <nav>
+      <a href="index.html">Homepage</a>
+      <a href="pokedex.html">Pokédex</a>
+    </nav>
+
+    <main>
+      <form id="search-form">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Name or ID..."
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <dialog id="search-dialog">
+        <div id="dialog-content"></div>
+        <button id="dialog-close">Close</button>
+      </dialog>
+
+      <section id="pokemon-list"></section>
+    </main>
+
     <script src="main.js"></script>
   </body>
 </html>
