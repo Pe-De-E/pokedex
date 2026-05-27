@@ -1,4 +1,4 @@
-const pokedexContainer = document.querySelector("#pokedex-list");
+const pokedexContainer = document.querySelector("#pokemon-list");
 
 const pokedex = JSON.parse(localStorage.getItem("pokedex")) || [];
 
@@ -35,7 +35,8 @@ pokedex.forEach((pokemon) => {
   );
 
   const name = document.createElement("h2");
-  name.textContent = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+  name.textContent = pokemon.name;
+  name.classList.add("capitalize");
 
   name.classList.add("text-xl", "font-bold", "mb-2");
 
