@@ -13,7 +13,7 @@ export function setupControls() {
     const cards = getCards();
     if (!cards.length) return;
     selectedIndex = Math.max(0, Math.min(index, cards.length - 1));
-    cards[selectedIndex].scrollIntoView({ behavior: "smooth", block: "nearest" });
+    list.scrollTo({ top: cards[selectedIndex].offsetTop - list.offsetTop, behavior: "smooth" });
   }
 
   const actions = {
