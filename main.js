@@ -1,3 +1,5 @@
+import { setupControls } from "./controls.js";
+
 // ======================
 // DOM ELEMENTS - Elemente aus HTML auswählen und in Variablen speichern
 // ======================
@@ -146,8 +148,37 @@ searchForm.addEventListener("submit", (event) => {
         "bg-blue-500",
         "text-white",
         "p-2",
-        "rounded"
+        "rounded",
+        "block",
+        "mx-auto",
+        "mt-3"
       );
+
+      catchButton.addEventListener("click", () => {
+        let caughtPokemon = JSON.parse(localStorage.getItem("pokedex")) || [];
+
+        const alreadyCaught = caughtPokemon.find(
+          (poke) => poke.id === pokemonData.id
+        );
+
+        if (alreadyCaught) {
+          alert("Pokemon already caught!");
+          searchDialog.close();
+          return;
+        }
+
+        caughtPokemon.push({
+          id: pokemonData.id,
+          name: pokemonData.name,
+          image: pokemonData.sprites.front_default,
+          stats: pokemonData.stats,
+          note: "",
+        });
+
+        localStorage.setItem("pokedex", JSON.stringify(caughtPokemon));
+        alert(`${pokemonData.name} caught!`);
+        searchDialog.close();
+      });
 
       card.append(image, name, statsContainer, catchButton);
       dialogContent.appendChild(card);
@@ -168,3 +199,9 @@ searchForm.addEventListener("submit", (event) => {
 dialogClose.addEventListener("click", () => {
   searchDialog.close();
 });
+
+// ======================
+// CONTROL BUTTONS
+// ======================
+
+setupControls();

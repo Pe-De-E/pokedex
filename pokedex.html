@@ -18,40 +18,39 @@
           </div>
 
           <div class="mt-6 flex justify-between items-center">
-            <div class="relative w-24 h-24">
-              <button aria-label="Up" class="absolute left-8 top-0 w-8 h-8 bg-indigo-950 rounded shadow active:scale-95 hover:bg-indigo-800"></button>
+            <div class="relative w-28 h-28">
+              <button aria-label="Up" class="absolute left-10 top-0 w-8 h-8 bg-indigo-950 rounded-t-lg shadow active:scale-95 hover:bg-indigo-800"></button>
 
-              <button aria-label="Left" class="absolute left-0 top-8 w-8 h-8 bg-indigo-950 rounded shadow active:scale-95 hover:bg-indigo-800"></button>
+              <button aria-label="Left" class="absolute left-0 top-10 w-8 h-8 bg-indigo-950 rounded-l-lg shadow active:scale-95 hover:bg-indigo-800"></button>
 
-              <button aria-label="Right" class="absolute right-0 top-8 w-8 h-8 bg-indigo-950 rounded shadow active:scale-95 hover:bg-indigo-800"></button>
+              <button aria-label="Right" class="absolute right-0 top-10 w-8 h-8 bg-indigo-950 rounded-r-lg shadow active:scale-95 hover:bg-indigo-800"></button>
 
-              <button aria-label="Down" class="absolute left-8 bottom-0 w-8 h-8 bg-indigo-950 rounded shadow active:scale-95 hover:bg-indigo-800"></button>
+              <button aria-label="Down" class="absolute left-10 bottom-0 w-8 h-8 bg-indigo-950 rounded-b-lg shadow active:scale-95 hover:bg-indigo-800"></button>
 
-              <div class="absolute left-8 top-8 w-8 h-8 bg-indigo-800 rounded"></div>
+              <div class="absolute left-10 top-10 w-8 h-8 bg-indigo-800 rounded"></div>
             </div>
 
             <div class="flex gap-4 rotate-[-20deg]">
-              <button class="w-12 h-12 bg-gray-700 rounded-full shadow-lg active:scale-95 border-2 border-gray-400"></button>
+              <button aria-label="B" class="w-12 h-12 bg-gray-700 text-white text-sm font-bold rounded-full shadow-lg active:scale-95 border-2 border-gray-400">B</button>
 
-              <button class="w-12 h-12 bg-gray-700 rounded-full shadow-lg active:scale-95 border-2 border-gray-400"></button>
+              <button aria-label="A" class="w-12 h-12 bg-gray-700 text-white text-sm font-bold rounded-full shadow-lg active:scale-95 border-2 border-gray-400">A</button>
             </div>
           </div>
 
           <div class="mt-6 flex justify-center gap-8">
-            <div class="flex flex-col items-center gap-2">
+            <div class="flex flex-col items-center gap-2 rotate-[-25deg]">
               <a
                 href="index.html"
                 aria-label="Go to PokéSearch"
-                class="w-16 h-4 bg-indigo-900 rounded-full shadow active:scale-95 hover:bg-indigo-700"
+                class="w-16 h-4 bg-indigo-900 rounded-full shadow active:scale-95 hover:bg-indigo-700 block"
               ></a>
               <span class="text-xs font-bold text-indigo-950 tracking-wide">PokéSearch</span>
             </div>
-
-            <div class="flex flex-col items-center gap-2">
+            <div class="flex flex-col items-center gap-2 rotate-[-25deg]">
               <a
                 href="pokedex.html"
                 aria-label="Go to Pokédex"
-                class="w-16 h-4 bg-indigo-900 rounded-full shadow active:scale-95 hover:bg-indigo-700"
+                class="w-16 h-4 bg-indigo-900 rounded-full shadow active:scale-95 hover:bg-indigo-700 block"
               ></a>
               <span class="text-xs font-bold text-indigo-950 tracking-wide">Pokédex</span>
             </div>
@@ -68,6 +67,6 @@
       </div>
     </main>
 
-    <script src="pokedex.js"></script>
+    <script type="module" src="pokedex.js"></script>
   </body>
 </html>

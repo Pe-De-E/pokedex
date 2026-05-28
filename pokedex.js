@@ -1,3 +1,5 @@
+import { setupControls } from "./controls.js";
+
 const pokedexContainer = document.querySelector("#pokemon-list");
 
 const pokedex = JSON.parse(localStorage.getItem("pokedex")) || [];
@@ -103,3 +105,9 @@ pokedex.forEach((pokemon) => {
   card.append(image, name, stats, notes);
   pokedexContainer.append(card);
 });
+
+// ======================
+// CONTROL BUTTONS
+// ======================
+
+setupControls();
