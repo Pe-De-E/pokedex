@@ -38,9 +38,11 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=151") // Limit auf 151 Pokemon ge
 
           const image = document.createElement("img");
           image.src = pokemonData.sprites.front_default;
+          image.classList.add("mx-auto");
 
           const name = document.createElement("h2");
           name.textContent = pokemonData.name;
+          name.classList.add("capitalize", "text-center");
 
           const stats = document.createElement("div");
           // bisschen Styling
@@ -59,7 +61,7 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=151") // Limit auf 151 Pokemon ge
 
           const button = document.createElement("button");
           button.textContent = "Catch";
-          button.classList.add("bg-blue-500", "text-white", "p-2", "rounded");
+          button.classList.add("bg-blue-500", "text-white", "p-2", "rounded", "block", "mx-auto", "mt-3");
 
           // Catch Logik - Button erstellen
 
@@ -123,9 +125,11 @@ searchForm.addEventListener("submit", (event) => {
 
       const image = document.createElement("img");
       image.src = pokemonData.sprites.front_default;
+      image.classList.add("mx-auto");
 
       const name = document.createElement("h2");
       name.textContent = pokemonData.name;
+      name.classList.add("capitalize", "text-center");
 
       const statsContainer = document.createElement("div");
       statsContainer.classList.add(
