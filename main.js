@@ -95,3 +95,76 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=151") // Limit auf 151 Pokemon ge
         });
     });
   });
+// ======================
+// SEARCH FUNCTION
+// ======================
+
+searchForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const searchQuery = searchInput.value.toLowerCase().trim();
+
+  if (!searchQuery) return;
+
+  fetch(`https://pokeapi.co/api/v2/pokemon/${searchQuery}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Pokémon not found");
+      }
+      return response.json();
+    })
+    .then((pokemonData) => {
+      dialogContent.innerHTML = "";
+
+      const card = document.createElement("div");
+      card.classList.add("bg-white", "p-4", "rounded", "shadow");
+
+      const image = document.createElement("img");
+      image.src = pokemonData.sprites.front_default;
+
+      const name = document.createElement("h2");
+      name.textContent = pokemonData.name;
+
+      const statsContainer = document.createElement("div");
+      statsContainer.classList.add(
+        "text-sm",
+        "mt-2",
+        "bg-gray-100",
+        "p-2",
+        "rounded"
+      );
+
+      pokemonData.stats.forEach((statItem) => {
+        const statElement = document.createElement("p");
+        statElement.textContent = `${statItem.stat.name}: ${statItem.base_stat}`;
+        statsContainer.appendChild(statElement);
+      });
+
+      const catchButton = document.createElement("button");
+      catchButton.textContent = "Catch";
+      catchButton.classList.add(
+        "bg-blue-500",
+        "text-white",
+        "p-2",
+        "rounded"
+      );
+
+      card.append(image, name, statsContainer, catchButton);
+      dialogContent.appendChild(card);
+
+      searchDialog.showModal();
+    })
+    .catch(() => {
+      dialogContent.innerHTML =
+        "<p>Pokémon not found</p>";
+      searchDialog.showModal();
+    });
+});
+
+// ======================
+// CLOSE DIALOG
+// ======================
+
+dialogClose.addEventListener("click", () => {
+  searchDialog.close();
+});
